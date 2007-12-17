@@ -1,0 +1,60 @@
+prod:
+  logger:
+    class:   sfNoLogger
+    param:
+      level:   err
+      loggers: ~
+
+cli:
+  controller:
+    class: sfConsoleController
+  request:
+    class: sfConsoleRequest
+  response:
+    class: sfConsoleResponse
+
+test:
+  storage:
+    class: sfSessionTestStorage
+    param:
+      session_path: %SF_TEST_CACHE_DIR%/sessions
+
+#all:
+#  controller:
+#    class: sfFrontWebController
+#
+#  request:
+#    class: sfWebRequest
+#
+#  response:
+#    class: sfWebResponse
+#
+#  user:
+#    class: myUser
+#
+#  storage:
+#    class: sfSessionStorage
+#    param:
+#      session_name: symfony
+#
+#  view_cache:
+#    class: sfFileCache
+#    param:
+#      automatic_cleaning_factor: 0
+#      cache_dir:                 %SF_TEMPLATE_CACHE_DIR%
+#      lifetime:                  86400
+#      prefix:                    %SF_APP_DIR%
+#
+#  i18n:
+#    class: sfI18N
+#    param:
+#      cache:
+#        class: sfFileCache
+#        param:
+#          automatic_cleaning_factor: 0
+#          cache_dir:                 %SF_I18N_CACHE_DIR%
+#          lifetime:                  86400
+#          prefix:                    %SF_APP_DIR%
+#
+#  routing:
+#    class: sfPatternRouting
